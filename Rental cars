@@ -1,0 +1,80 @@
+#import
+#classes
+# Vehicle (Base class for general attributes like brand, model, year, rate)
+class Vehicle():
+    def __init__(self,brand,model,year,rate):
+        self.brand=brand
+        self.model=model
+        self.year=year
+        self.rate=rate
+
+    def add_cars(self):
+        self.brand = input("Brand: ")
+        self.model = input("Model: ")
+        self.year = int(input("Year: "))
+        self.rate = float(input("Rate per day: "))
+        self.no_of_doors = int(input("Number of doors: "))
+        self.transmission = input("Transmission (Automatic/Manual): ")
+   
+# Car (Derived class from Vehicle, adds number of doors, transmission type)
+
+class Car(Vehicle):
+    def __init__(self,no_of_doors,transmission,brand,model,year,rate):
+        super().__init__(brand,model,year,rate)
+    
+        self.no_of_doors=no_of_doors
+        self.transmission=transmission
+        print(f"This car is a {brand} {model} it has {no_of_doors} doors  and is {transmission}  it costs {rate}per day")
+
+    def check_year(self):
+        """
+        This Function Checks the
+        year of the car to 
+        decide if the car is old or new """
+        if self.year>2000:
+            print ("New car")
+        else:
+            print("old car")
+
+# RentalSystem (Manages the fleet, handles user interaction)   
+    class rental_system:
+        def __init__(self,fleet,users):
+            self.fleet=fleet
+            self.users=users
+
+# User (Base class for both admin and customer)
+class user(  ):
+    def __init__(self,username):
+        self.username=username
+
+# Admin and Customer (Subclasses of User with role-specific functionality)
+# Admin – Can add cars, view all cars, and remove cars from the system
+class Admin(user):
+    def __init__(self,username, add_cars,view_all_cars,remove_cars):
+        super().__init__(username)
+        self.add_cars=add_cars
+        self.view_all_cars=view_all_cars
+        self.remove_cars=remove_cars
+
+ # Customer – Can view available cars, rent a car, return a car, and see rental charges
+class Customer(user):
+    def __init__(self, available_cars,rent_a_car,return_a_car, rental_charges,username):
+        super().__init__(username)
+        self.available_cars=available_cars
+        self.rent_a_car=rent_a_car
+        self.rental_charges=rental_charges
+
+#main 
+if __name__ == '__main__':
+    print("Car System")
+    ferrari= Car( 4,"automatic","ferrari","Eeco", 2025, 10 )
+    print(f"This is a {ferrari.brand}") 
+    ferrari.check_year()
+    ferrari.add_cars()
+                     
+                     
+                     
+        
+
+
+
