@@ -57,14 +57,14 @@ cursor.executemany('''
 
 conn.commit()
 
-
+# to store customer logins
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS Customers (
         username TEXT PRIMARY KEY,
         password TEXT NOT NULL
     )
 ''')
-
+# to store history
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS Rental_history (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
