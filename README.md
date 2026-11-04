@@ -1,9 +1,11 @@
-# Shantanu builds robots 🤖
+# Shantanu Parab
 
-I build robots in simulation (drones, quadrupeds, arms, swarms and self-driving cars) with ROS 2, Gazebo and MuJoCo,
-and I like writing the plugins and controllers that make them move.
+Robotics engineer working across the stack: simulation and control, circuit design, and mechanical design
+with 3D printing. This page collects the robots I have built.
 
 ## Projects
+
+### Simulation and control
 
 <table>
 <tr>
